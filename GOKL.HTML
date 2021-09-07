@@ -81,10 +81,21 @@
 "blue cheese"
 ];
      var html1="",hmtl2="",html3="",html4="",html5="",html6="",html7="",html8="";
-     var choosen=0;
-     var choosenIngredients=[];
-     var listItemsHTML="";
-     var orderList="";
+     var choosen=0; // total amount of ingredients choosen
+     var choosenIngredients=[]; // choosen ingruients array.
+     var listItemsHTML=""; // list of items by number and name
+     var orderList=""; // this is a string of numbers to order.
+
+     function resetSummary(){
+	     //wrong function because don't delete the checkbox.
+	     console.log("reset");
+	     choosen=0; // total amount of ingredients choosen
+	     choosenIngredients=[]; // choosen ingruients array.
+	     listItemsHTML=""; // list of items by number and name
+	     orderList=""; // this is a string of numbers to order.
+	     renderSummary();
+
+     }
 
      function itisclicked(id){
      	console.log(id);
@@ -103,9 +114,12 @@
         		
 	}
 	console.log(choosen);
-	var htmlorderSummary="";
-        orderList="";
+	renderSummary();
+     }
 
+     function renderSummary(){
+	var htmlorderSummary="";
+	orderList="";
 	listItemsHTML="";
 	console.log(listItemsHTML);
 	for(x in choosenIngredients){
@@ -114,16 +128,16 @@
 			orderList += `${x} , `;
 		}
 		
-     	}
-        htmlorderSummary += `you chose: ${choosen} ingredients<br>`;
-        htmlorderSummary += `${orderList}`; 
+	}
+	htmlorderSummary += `you chose: ${choosen} ingredients<br>`;
+	htmlorderSummary += `${orderList}`; 
 	document.getElementById("choosenid").innerHTML=htmlorderSummary;
 	console.log(listItemsHTML);
 	console.log(choosenIngredients);
 	console.log(orderList);
 	document.getElementById("listid").innerHTML= listItemsHTML;
+			
      }
-
      function togglemenu(id) {
         console.log(id); 
         if(document.getElementById(id).style.display==="none"){
@@ -177,7 +191,7 @@
 	<p>Up to 10 ingredients</p>
 </div>
 <h2>Choose your ingredients:</h2>
-<p id="choosenid">you chose: <p>
+<p id="choosenid" >you chose: <p>
 <div id="listid"></div>
 
 <form action="/action_page.php">
