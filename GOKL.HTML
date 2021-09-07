@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script>
+    	var MeatFishMenu=["Tuna / ทูน่า","Boiled chicken / ไก่ต้ม","Boiled fish / ปลาต้ม","Boiled scomber fish / ปลาสคอมเบอร์ต้ม","Boiled egg / ไข่ต้ม","Scrambled egg / ไข่คน"];
+        var BeansSeedsMenu=["White rice","Rice noodle","Crispy noodle white","Falafel","Red bean","Chick peas","Chick peas","Long bean","Green peas","Quinoa","Tofu boiled","Beansprouts (white)"];
+	var VegetablesMenu=[
+"Carrot",
+"Broccoli",
+"Lettuce",
+"Cucumber",
+"Avocado",
+"Tomato",
+"Cauliflower",
+"Onion",
+"Potato",
+"Olive",
+"Pumpkin",
+"Spinach",
+"Baby corn",
+"Sweet corn",
+"Beetroot",
+"Seaweed salad",
+"Celery",
+"Radish",
+"Sweet potato",
+"Boiled eggplant",
+"Dried tomato",
+"Mashed potato",
+"Kimchi",
+"Cabbage white",
+"Pickle cucumber",
+"Pickle cappers",
+"Fresh ginger",
+"Spring onion"
+];
+	var CheeseMenu=[
+"Fete",
+"Cottage cheese",
+"Mozzarella cheese",
+"Ricotta cheese",
+"Sour cream",
+"Parmesan cheese"
+];
+
+	var HerbsPlantsMenu=[
+"Morning glory",
+"Fresh garlic",
+"Dill",
+"Mushroom",
+"Bell pepper",
+"Young sunflowers",
+"Fried garlic"
+];
+	var NutsMenu=[
+"Goji",
+"Walnuts",
+"Almond",
+"Cashew nut",
+"Sun seed",
+"Chia seed(dry)",
+"Pumpkin seed"
+];		
+	var FruitsMenu=[
+"Mango",
+"Banana",
+"Papaya",
+"Apple",
+"Pineapple",
+"Greek yogurt",
+"Grape",
+"Dry cranberry",
+"Raisin"
+];
+	var ExtraMenu=[
+"Fresh salmon raw",
+"Fresh tuna",
+"Shrimps",
+"Becon",
+"Ham",
+"blue cheese	"
+];
+	    var html1="",hmtl2="",html3="",html4="",html5="",html6="",html7="",html8="";
+
+     function togglemenu(id) {
+        console.log(id); 
+        if(document.getElementById(id).style.display==="none"){
+            document.getElementById(id).style.display="block";
+        }
+        else{
+            document.getElementById(id).style.display="none";
+        } 
+     } 
+
+    function rendermenu(id,number,menu,html){
+    	//console.log(menu); 
+	console.log(html);
+    	for(const x in menu){
+		var indexid = parseInt(x, 10)+parseInt(number, 10);
+		html +=`<input type=\"checkbox\" id=\"${menu[x]}\" name=\"${menu[x]}\" value=\"${indexid}\">`;
+
+		html +=`${indexid}. `;
+		html +=`<label for=\"${menu[x]}\" style="cursor:pointer;"> ${menu[x]}.</label><br>`;
+		}
+        document.getElementById(id).innerHTML= html;
+	console.log(html);
+     }
+    
+    function render(){
+		
+    	rendermenu('meatfishmenuid',1,MeatFishMenu,html1);
+        rendermenu('beansseedsid',7,BeansSeedsMenu,hmtl2);
+     	rendermenu('vegetablesid',18,VegetablesMenu,html3);
+        rendermenu('cheeseid',46,CheeseMenu,html4);
+        rendermenu('herbsPlantsid',52,HerbsPlantsMenu,html5);
+        rendermenu('nutsid',59,NutsMenu,html6);
+        rendermenu('fruitsid',66,FruitsMenu,html7);
+        rendermenu('extraid',75,ExtraMenu,html8);
+        
+          
+     }       
+//  meat & fish, 1 , tuna, boiled chicken, boiled rish, boiled scomber fish, boiled egg, scrambled egg
+//document.getElementById("demo").innerhtml = "is block so we change";
+
+
+	</script>
+</head>
+
+<body onload="render()">
+
+<h1>Welcome to go healthy kophangan</h1>
+<div style="text-align:center;border-style:dotted;" >
+	<h4>Standard bowl (120 baht):</h4>
+	<p>Up to 7 ingredients</p>
+	<h4>Big bowl (150 baht):</h4>
+	<p>Up to 10 ingredients</p>
+</div>
+<h2>Choose your ingredients:</h2>
+
+<form action="/action_page.php">
+
+ 
+  <p onclick="togglemenu('meatfishmenuid')" style="cursor:pointer;"><strong>Meat and fish</strong></p>
+  <div id="meatfishmenuid" style="display:none;"></div>
+
+  <p onclick="togglemenu('beansseedsid')" style="cursor:pointer;"><strong>Beans & seeds</strong></p>
+  <div id="beansseedsid" style="display:none;"></div>
+  
+  <p onclick="togglemenu('vegetablesid')" style="cursor:pointer;"><strong>Vegetables</strong></p>
+  <div id="vegetablesid" style="display:none;"></div>
+
+  <p onclick="togglemenu('cheeseid')" style="cursor:pointer;"><strong>Cheese</strong></p>
+  <div id="cheeseid" style="display:none;"></div>
+
+  <p onclick="togglemenu('herbsPlantsid')" style="cursor:pointer;"><strong>Herbs & Plants</strong></p>
+  <div id="herbsPlantsid" style="display:none;"></div>
+
+  <p onclick="togglemenu('nutsid')" style="cursor:pointer;"><strong>Nuts</strong></p>
+  <div id="nutsid" style="display:none;"></div>
+  
+  <p onclick="togglemenu('fruitsid')" style="cursor:pointer;"><strong>Fruits</strong></p>
+  <div id="fruitsid" style="display:none;"></div>
+
+
+  <p onclick="togglemenu('extraid')" style="cursor:pointer;"><strong>Extra 50 baht</strong></p>
+  <div id="extraid" style="display:none;"></div>
+
+
+
+  <input type="submit" value="submit">
+</form> 
+
+</body>
+</html>
+
+
+
