@@ -78,9 +78,51 @@
 "Shrimps",
 "Becon",
 "Ham",
-"blue cheese	"
+"blue cheese"
 ];
-	    var html1="",hmtl2="",html3="",html4="",html5="",html6="",html7="",html8="";
+     var html1="",hmtl2="",html3="",html4="",html5="",html6="",html7="",html8="";
+     var choosen=0;
+     var choosenIngredients=[];
+     var listItemsHTML="";
+     var orderList="";
+
+     function itisclicked(id){
+     	console.log(id);
+	var checkbox=document.getElementById(id);
+	console.log(checkbox);
+	if(checkbox.checked==true){
+		choosen +=1;
+		console.log("check");
+		choosenIngredients[checkbox.value]=checkbox.name;
+        		
+	}
+	if(checkbox.checked==false){
+		choosen -=1;
+		console.log("not check");
+		choosenIngredients[checkbox.value]="";
+        		
+	}
+	console.log(choosen);
+	var htmlorderSummary="";
+        orderList="";
+
+	listItemsHTML="";
+	console.log(listItemsHTML);
+	for(x in choosenIngredients){
+		if(choosenIngredients[x]!==""){
+			listItemsHTML += `<li>${x}. ${choosenIngredients[x]}</li>`;
+			orderList += `${x} , `;
+		}
+		
+     	}
+        htmlorderSummary += `you chose: ${choosen} ingredients<br>`;
+        htmlorderSummary += `${orderList}`; 
+	document.getElementById("choosenid").innerHTML=htmlorderSummary;
+	console.log(listItemsHTML);
+	console.log(choosenIngredients);
+	console.log(orderList);
+	document.getElementById("listid").innerHTML= listItemsHTML;
+     }
 
      function togglemenu(id) {
         console.log(id); 
@@ -97,8 +139,7 @@
 	console.log(html);
     	for(const x in menu){
 		var indexid = parseInt(x, 10)+parseInt(number, 10);
-		html +=`<input type=\"checkbox\" id=\"${menu[x]}\" name=\"${menu[x]}\" value=\"${indexid}\">`;
-
+		html +=`<input type=\"checkbox\" id=\"${menu[x]}\" name=\"${menu[x]}\" value=\"${indexid}\" onclick=\"itisclicked(\'${menu[x]}\')\">`;
 		html +=`${indexid}. `;
 		html +=`<label for=\"${menu[x]}\" style="cursor:pointer;"> ${menu[x]}.</label><br>`;
 		}
@@ -136,6 +177,8 @@
 	<p>Up to 10 ingredients</p>
 </div>
 <h2>Choose your ingredients:</h2>
+<p id="choosenid">you chose: <p>
+<div id="listid"></div>
 
 <form action="/action_page.php">
 
