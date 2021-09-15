@@ -1,0 +1,29 @@
+.foldable{
+	padding:10px;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#aa7350+0,26558b+100 */
+background: rgb(170,115,80); /* Old browsers */
+background: -moz-linear-gradient(45deg,  rgba(170,115,80,1) 0%, rgba(38,85,139,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  rgba(170,115,80,1) 0%,rgba(38,85,139,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  rgba(170,115,80,1) 0%,rgba(38,85,139,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa7350', endColorstr='#26558b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+.menufoldable{
+	background:gray;
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#aa7350+0,26558b+100 */
+background: rgb(170,115,80); /* Old browsers */
+background: -moz-linear-gradient(45deg,  rgba(170,115,80,1) 0%, rgba(38,85,139,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  rgba(170,115,80,1) 0%,rgba(38,85,139,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  rgba(170,115,80,1) 0%,rgba(38,85,139,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa7350', endColorstr='#26558b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+.seeds{
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#72ea70+0,ffffff+72 */
+background: rgb(114,234,112); /* Old browsers */
+background: -moz-linear-gradient(45deg, rgba(114,234,112,1) 0%, rgba(255,255,255,1) 72%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, rgba(114,234,112,1) 0%,rgba(255,255,255,1) 72%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, rgba(114,234,112,1) 0%,rgba(255,255,255,1) 72%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#72ea70', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+//https://www.colorzilla.com/gradient-editor/

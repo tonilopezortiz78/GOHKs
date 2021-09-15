@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Healthy</title>
+	<link rel="stylesheet" type="text/css" href="stylelog.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<script>
     	var MeatFishMenu=["Tuna / ทูน่า","Boiled chicken / ไก่ต้ม","Boiled fish / ปลาต้ม","Boiled scomber fish / ปลาสคอมเบอร์ต้ม","Boiled egg / ไข่ต้ม","Scrambled egg / ไข่คน"];
         var BeansSeedsMenu=["White rice","Rice noodle","Crispy noodle white","Falafel","Red bean","Chick peas","Long bean","Green peas","Quinoa","Tofu boiled","Beansprouts (white)"];
@@ -153,9 +156,9 @@
 	console.log(html);
     	for(const x in menu){
 		var indexid = parseInt(x, 10)+parseInt(number, 10);
-		html +=`<input type=\"checkbox\" id=\"${menu[x]}\" name=\"${menu[x]}\" value=\"${indexid}\" onclick=\"itisclicked(\'${menu[x]}\')\">`;
+		html +=`<input  type=\"checkbox\" id=\"${menu[x]}\" name=\"${menu[x]}\" value=\"${indexid}\" onclick=\"itisclicked(\'${menu[x]}\')\">`;
 		html +=`${indexid}. `;
-		html +=`<label for=\"${menu[x]}\" style="cursor:pointer;"> ${menu[x]}.</label><br>`;
+		html +=`<label for=\"${menu[x]}\" style="cursor:pointer; font-size:1.3em;"> ${menu[x]}.</label><br>`;
 		}
         document.getElementById(id).innerHTML= html;
 	console.log(html);
@@ -183,9 +186,9 @@
 
 <body onload="render()">
 
-<h1>Welcome to go healthy kophangan</h1>
+<h1 style="text-align:center;">Welcome to go healthy kophangan</h1>
 <div style="text-align:center;border-style:dotted;" >
-	<h4>Standard bowl (120 baht):</h4>
+	<p>Standard bowl (120 baht):</p>
 	<p>Up to 7 ingredients</p>
 	<h4>Big bowl (150 baht):</h4>
 	<p>Up to 10 ingredients</p>
@@ -196,13 +199,16 @@
 
 <form action="/action_page.php">
 
- 
-  <p onclick="togglemenu('meatfishmenuid')" style="cursor:pointer;"><strong>Meat and fish</strong></p>
-  <div id="meatfishmenuid" style="display:none;"></div>
+	<div class="menufoldable">
+  	   <p onclick="togglemenu('meatfishmenuid')" style="cursor:pointer;"><strong>Meat and fish</strong></p>
+  	   <div class="foldable"; id="meatfishmenuid" style="display:none;"></div>
+  </div>
 
+  <div class="seeds">
   <p onclick="togglemenu('beansseedsid')" style="cursor:pointer;"><strong>Beans & seeds</strong></p>
-  <div id="beansseedsid" style="display:none;"></div>
-  
+  <div class="seeds" id="beansseedsid" style="display:none;"></div>
+  </div>  
+
   <p onclick="togglemenu('vegetablesid')" style="cursor:pointer;"><strong>Vegetables</strong></p>
   <div id="vegetablesid" style="display:none;"></div>
 
